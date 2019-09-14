@@ -34,5 +34,6 @@ p{
 img{
     margin:10px;
     height: auto;
-    width: 80%;
+    width: 90%;
+    border-radius: 7px;
 }
