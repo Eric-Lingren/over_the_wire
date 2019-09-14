@@ -1,0 +1,10 @@
+.component-wrapper{
+    width: 100vw;
+    display: flex;
+}
+.page-wrapper{
+    width: 100vw;
+}
+.page-title{
+    color: white;
+}

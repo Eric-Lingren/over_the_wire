@@ -1,0 +1,26 @@
+.navbar-wrapper{
+    width: 100px;
+    border-right: 3px solid white;
+}
+.nav-ul{
+    list-style-type: none;
+    text-align: left;
+    padding-left: 7px;
+}
+.nav-item{
+    padding: 5px;
+    font-size: 1.5em;
+}
+.sub-nav-item{
+    padding: 5px;
+    font-size: 1.2em;
+}
+.link{
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 3px solid black;
+}
+.link:hover, .active{
+    border-bottom: 2px solid white;
+}
