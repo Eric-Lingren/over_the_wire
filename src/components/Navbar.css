@@ -1,6 +1,7 @@
 .navbar-wrapper{
-    width: 100px;
+    width: 120px;
     border-right: 3px solid white;
+    padding: 0px 10px 0px 10px;
 }
 .nav-ul{
     list-style-type: none;

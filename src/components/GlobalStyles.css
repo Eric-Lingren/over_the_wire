@@ -3,8 +3,19 @@
     display: flex;
 }
 .page-wrapper{
-    width: 100vw;
+    width:100%;
 }
 .page-title{
     color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+.section-heading{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+p{
+    padding: 10px 50px 10px 50px;
+    font-size: 1.3em;
+    margin-top: 0;
 }
