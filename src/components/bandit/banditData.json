@@ -2,19 +2,35 @@
     "banditData" : [
         {
             "level" : "00",
-            "goal" : "The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.",
-            "commands" : "ssh"
+            "goal" : "The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.",
+            "commands" : "ssh, ls, cd, cat, file, du, find",
+            "answer": "boJ9jbbUNNfktd78OOpsqOltutMc3MY1",
+            "image" : "/images/bandit/level00.png",
+            "takeaways" : "Use cat to display the contents of a file inline."
         },
         {
             "level" : "01",
-            "goal" : "The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.",
-            "commands" : "ls, cd, cat, file, du, find"
+            "goal" : "The password for the next level is stored in a file called - located in the home directory",
+            "commands" : "ls, cd, cat, file, du, find",
+            "answer": "CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9",
+            "image" : "/images/bandit/level01.png",
+            "takeaways" : "In order to access a file that doesn't start with a letter/number in Linux, you need to preface that with a realative path.  By using a './' before the file name of '-' we are able to tell the OS that we want the file in our current working directory which is called - ."
         },
         {
-            "level" : "02"
+            "level" : "02",
+            "goal" : "The password for the next level is stored in a file called spaces in this filename located in the home directory",
+            "commands" : "ls, cd, cat, file, du, find",
+            "answer": "UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK",
+            "image" : "/images/bandit/level02.png",
+            "takeaways" : "Use tab to autocomplete the filenames in order to have proper path name formatting. A backslash will escape your spaces."
         },
         {
-            "level" : "03"
+            "level" : "03",
+            "goal" : "The password for the next level is stored in a hidden file in the inhere directory.",
+            "commands" : "ls, cd, cat, file, du, find",
+            "answer": "pIwrPrtPN36QITSp3EQaw936yaFoFgAB",
+            "image" : "/images/bandit/level03.png",
+            "takeaways" : "When using the 'ls' command you will not see hidden files.  You must add the '-a' switch in order to see all files/folders in that directory.  By combining the '-l' switch with the '-a' switch, we are able to list out all items in a list view to provide more details."
         }
     ]
 }
