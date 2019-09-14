@@ -10,10 +10,10 @@ function Navbar() {
                     <NavLink className='link' to="/home" > Home </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className='link' to="/bandit-home"> Bandit </NavLink>
+                    <NavLink className='link' to="/bandit/home"> Bandit </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className='link' to="/natas-home"> Natas </NavLink> 
+                    <NavLink className='link' to="/natas/home"> Natas </NavLink> 
                 </li>
             </ul>
         

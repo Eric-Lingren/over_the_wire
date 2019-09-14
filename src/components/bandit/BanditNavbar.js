@@ -7,13 +7,13 @@ function BanditNavbar() {
         <div className="navbar-wrapper">
             <ul className="nav-ul">
                 <li className="sub-nav-item">
-                    <Link className='link' to="/"> Level 1 </Link>
+                    <Link className='link' to="/bandit/level01"> Level 1 </Link>
                 </li>
                 <li className="sub-nav-item">
-                    <Link className='link' to="/bandit-home"> Level 2 </Link>
+                    <Link className='link' to="/bandit/level02"> Level 2 </Link>
                 </li>
                 <li className="sub-nav-item">
-                    <Link className='link' to="/natas-home"> Level 3 </Link> 
+                    <Link className='link' to="/bandit/level03"> Level 3 </Link> 
                 </li>
             </ul>
         
