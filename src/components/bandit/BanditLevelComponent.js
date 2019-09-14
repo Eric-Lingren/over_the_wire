@@ -1,11 +1,8 @@
 import React from 'react';
 import BanditNavbar from './BanditNavbar'
-import Prism from "prismjs";
 import '../GlobalStyles.css'
-import "../prism.css";
 
 function BanditLevelComponent(props) {
-    console.log(props.levelData);
     return (
         <div className="component-wrapper">
             <BanditNavbar />
@@ -23,7 +20,7 @@ function BanditLevelComponent(props) {
 
                 <h2 className='section-heading'> Answer: </h2>
                 <pre className='code-wrapper'>
-                    <code className="language-javascript">
+                    <code className="code">
                         {props.levelData.answer}
                     </code>
                 </pre>
