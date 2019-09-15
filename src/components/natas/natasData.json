@@ -1,0 +1,20 @@
+{
+    "natasData" : [
+        {
+            "level" : "00",
+            "goal" : "",
+            "commands" : "",
+            "answer": "",
+            "image" : "/images/natas/level00.png",
+            "takeaways" : ""
+        },
+        {
+            "level" : "01",
+            "goal" : "",
+            "commands" : "",
+            "answer": "",
+            "image" : "/images/natas/level01.png",
+            "takeaways" : ""
+        }
+    ]
+}
