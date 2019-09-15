@@ -11,7 +11,6 @@ import NatasHome from './components/natas/NatasHome'
 import NatasLevelComponent from './components/natas/NatasLevelComponent'
 
 function App() {
-  console.log(natasData);
   return (
     <div className="App">
       <Navbar />

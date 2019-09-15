@@ -11,12 +11,14 @@ function NatasLevelComponent(props) {
 
                 <h2 className='section-heading'> Level Goal: </h2>
                 <p> {props.levelData.goal} </p>
-
-                <h2 className='section-heading'> Commands you may need to solve this level: </h2>
-                <p> {props.levelData.commands} </p>
                 
-                <h2 className='section-heading'> Terminal Walkthrough: </h2>
-                <img src={`${props.levelData.image}`} alt='screenshot'/>
+                <h2 className='section-heading'> Walkthrough: </h2>
+                {
+                    props.levelData.image.map( (image, i) => {
+                        return <img key={i} src={`${image}`} alt='screenshot'/>
+                    })
+                }
+                
 
                 <h2 className='section-heading'> Answer: </h2>
                 <pre className='code-wrapper'>

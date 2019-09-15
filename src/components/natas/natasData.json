@@ -2,19 +2,24 @@
     "natasData" : [
         {
             "level" : "00",
-            "goal" : "",
-            "commands" : "",
-            "answer": "",
-            "image" : "/images/natas/level00.png",
-            "takeaways" : ""
+            "goal" : "Username: natas0 Password: natas0 URL: http://natas0.natas.labs.overthewire.org",
+            "answer": "gtVrDuiDfck831PqWsLEZy5gyDz1clto",
+            "image" : ["/images/natas/level00.png"],
+            "takeaways" : "The password for the next level was hidden in plain text in the html as a comment.  We can find this by opening up our console and examining the elements on the page."
         },
         {
             "level" : "01",
-            "goal" : "",
-            "commands" : "",
-            "answer": "",
-            "image" : "/images/natas/level01.png",
-            "takeaways" : ""
+            "goal" : "Username: natas1 URL: http://natas1.natas.labs.overthewire.org",
+            "answer": "ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi",
+            "image" : ["/images/natas/level01.png"],
+            "takeaways" : "The password for the next level was also hidden in plain text in the html comments. Easy to find, but because right click was disable we need to use the Mac shorcut ' command + option + c ' to open the dev tools."
+        },
+        {
+            "level" : "02",
+            "goal" : "Username: natas2 URL: http://natas2.natas.labs.overthewire.org",
+            "answer": "sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14",
+            "image" : ["/images/natas/level02.1.png", "/images/natas/level02.2.png"],
+            "takeaways" : "For this level there was no password in the html file.  I looked through all the files on this site in the dev tools - css and js - and there was nothing there that was useful.  The one thing different on this page than the previous pages was that there was a 1px by 1px image.  Making this image larger through the css properties didnt help, nor did viewing it in the developer tools files.  However, finding that file directly on the server yielded some intersting results.  We can see that the path of this image is hosted on the server at /files/pixel.png.  By going to the /files path on the server we are able to view all files hosted on this domain.  Here we find a users file which contains the password we are looking for."
         }
     ]
 }
