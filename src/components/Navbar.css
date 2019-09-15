@@ -1,5 +1,5 @@
 .navbar-wrapper{
-    width: 120px;
+    width: 10%;
     border-right: 3px solid white;
     padding: 0px 10px 0px 10px;
 }
@@ -10,18 +10,18 @@
 }
 .nav-item{
     padding: 5px;
-    font-size: 1.5em;
+    font-size: 2vw;
 }
 .sub-nav-item{
     padding: 5px;
-    font-size: 1.2em;
+    font-size: 1.3vw;
 }
 .link{
     letter-spacing: 2px;
     color: #fff;
     text-decoration: none;
-    border-bottom: 3px solid black;
+    border-bottom: .2vw solid black;
 }
 .link:hover, .active{
-    border-bottom: 2px solid white;
+    border-bottom: .2vw solid white;
 }

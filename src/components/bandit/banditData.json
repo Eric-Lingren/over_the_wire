@@ -31,6 +31,30 @@
             "answer": "pIwrPrtPN36QITSp3EQaw936yaFoFgAB",
             "image" : "/images/bandit/level03.png",
             "takeaways" : "When using the 'ls' command you will not see hidden files.  You must add the '-a' switch in order to see all files/folders in that directory.  By combining the '-l' switch with the '-a' switch, we are able to list out all items in a list view to provide more details."
+        },
+        {
+            "level" : "04",
+            "goal" : "The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.",
+            "commands" : "ls, cd, cat, file, du, find",
+            "answer": "koReBOKuIDDepwhWk7jZC0RTdopnAYKh",
+            "image" : "/images/bandit/level04.png",
+            "takeaways" : "The file command shows you more information about a file.  In this case we are able to determine if a file is a data file or a human readabe ASCII file by using the file operator.  This is slightly faster than opening each file individually to check if it is human readable, although I am sure there is a way to combine the file and find operations to search through a directory and return all ASCII files."
+        },
+        {
+            "level" : "05",
+            "goal" : "The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties: human-readable, 1033 bytes in size, not executable",
+            "commands" : "ls, cd, cat, file, du, find",
+            "answer": "DXjZPULLxYr17uwoI01bNLQbtFemEgo7",
+            "image" : "/images/bandit/level05.png",
+            "takeaways" : "Finding a file by size is probably the most specific of the 3 options they give us.  We can find all files that have a size that matches our requirements.  In this case we use -size 1033c.  The c means bytes.  We also could have used the suffix k for kilobytes, M for megabytes or G for gigabytes."
+        },
+        {
+            "level" : "06",
+            "goal" : "TThe password for the next level is stored somewhere on the server and has all of the following properties: owned by user bandit7, owned by group bandit6, 33 bytes in size",
+            "commands" : "ls, cd, cat, file, du, find, grep",
+            "answer": "HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs",
+            "image" : "/images/bandit/level06.png",
+            "takeaways" : "The password for this level is stored somewhere on the server, not in our level directory. Therefore it is best for us to begin our search at the root level of the server.  We can get to the root with a cd / command. If we run a find command to search for the file size as we did last time, we will get many permission denied errors. We can remove these with the opperator -print 2>/dev/null.  This command essentially takes all permission denied errors and dumps them in a temporary and disposable file called dev/null to make our output be more legible.  This still doesnt help us much though because there are dozens of files on this server that are 33 bytes.  We can get more specific by using the -user and -group options to filter our search results.  This leaves us with only one file on the server matching our criteria, which we can then view to see our password."
         }
     ]
 }
