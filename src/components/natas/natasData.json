@@ -20,6 +20,20 @@
             "answer": "sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14",
             "image" : ["/images/natas/level02.1.png", "/images/natas/level02.2.png"],
             "takeaways" : "For this level there was no password in the html file.  I looked through all the files on this site in the dev tools - css and js - and there was nothing there that was useful.  The one thing different on this page than the previous pages was that there was a 1px by 1px image.  Making this image larger through the css properties didnt help, nor did viewing it in the developer tools files.  However, finding that file directly on the server yielded some intersting results.  We can see that the path of this image is hosted on the server at /files/pixel.png.  By going to the /files path on the server we are able to view all files hosted on this domain.  Here we find a users file which contains the password we are looking for."
+        },
+        {
+            "level" : "03",
+            "goal" : "Username: natas3 URL: http://natas3.natas.labs.overthewire.org",
+            "answer": "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ",
+            "image" : ["/images/natas/level03.1.png", "/images/natas/level03.2.png", "/images/natas/level03.3.png"],
+            "takeaways" : "The hint in the comments points us in a pretty good direction.  The fact that Google cant find the answer implies that there are poritions of the site that are hidden from Google's indexing robots.  This means the first thing we should do is check this ./robots.txt file to see what the site is hiding from Google. This shows us the hidden route of ./s3cr3t/  When we type this page into the browser, we instantly find a users file, and again within that file is the password for the next level."
+        },
+        {
+            "level" : "04",
+            "goal" : "Username: natas4 URL: http://natas4.natas.labs.overthewire.org",
+            "answer": "iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq",
+            "image" : ["/images/natas/level04.1.png", "/images/natas/level04.2.png", "/images/natas/level04.3.png"],
+            "takeaways" : "I thought I had a strong foundation of http requests, but this exercise pushed the envelope.  Based on the instructions we need to send a modified referer header to the server in order to obtain our next password, but this turned out to be a little harder than I thought.  First I inspected the GET requests in the network tab to validate the referrers, but after that things got a little more compicated...  I used console.log(document.referer) in the console to check what the current page referer was.  Then I tried changing that through a JavaScript function.  This indeed worked as you can see in the screenshots, but was unable to modify the GET header when the request was actually sent.  I then tried to modify the a tag with rel and referer options, both of which didn't help us get to our goal.  As I was reading more about referrer headers, I realized this was not something we could simply modify in the console, but rather had to intercept the packet and modify it before forwarding to the server in our GET request.  This forced me to download and try a few different browser extensions which could modify headers, and I finally found one on Firefox called Header Editor which was able to do exactly what we needed - add a header tag called 'referer' and set that value to the url we needed before forwarding the request to the web server. "
         }
     ]
 }
