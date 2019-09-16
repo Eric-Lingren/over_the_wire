@@ -16,6 +16,7 @@ function App() {
       <Navbar />
       
       <Switch>
+        <Route exact path='/' component={OTWHome} />
         <Route path='/home' component={OTWHome} />
         <Route path='/bandit/home' component={BanditHome} />
         {
