@@ -34,6 +34,13 @@
             "answer": "iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq",
             "image" : ["/images/natas/level04.1.png", "/images/natas/level04.2.png", "/images/natas/level04.3.png"],
             "takeaways" : "I thought I had a strong foundation of http requests, but this exercise pushed the envelope.  Based on the instructions we need to send a modified referer header to the server in order to obtain our next password, but this turned out to be a little harder than I thought.  First I inspected the GET requests in the network tab to validate the referrers, but after that things got a little more compicated...  I used console.log(document.referer) in the console to check what the current page referer was.  Then I tried changing that through a JavaScript function.  This indeed worked as you can see in the screenshots, but was unable to modify the GET header when the request was actually sent.  I then tried to modify the a tag with rel and referer options, both of which didn't help us get to our goal.  As I was reading more about referrer headers, I realized this was not something we could simply modify in the console, but rather had to intercept the packet and modify it before forwarding to the server in our GET request.  This forced me to download and try a few different browser extensions which could modify headers, and I finally found one on Firefox called Header Editor which was able to do exactly what we needed - add a header tag called 'referer' and set that value to the url we needed before forwarding the request to the web server. "
+        },
+        {
+            "level" : "05",
+            "goal" : "Username: natas5 URL: http://natas5.natas.labs.overthewire.org",
+            "answer": "aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1",
+            "image" : ["/images/natas/level05.1.png", "/images/natas/level05.2.png"],
+            "takeaways" : " Our hint is 'You are not logged in.' Our authentication for logged in sessions can either be maintained with cookies or tokens.  When we look at the request headers we find that they are indeed using a cookie called loggedin which is set to 0 by default.  Easy enough... Lets go ito the application tab, find that cookie and change it to true with a number 1 and then refresh the page.  Just like that we are authenticated and can see the password."
         }
     ]
 }
