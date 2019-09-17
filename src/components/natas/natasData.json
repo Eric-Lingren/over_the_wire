@@ -41,6 +41,20 @@
             "answer": "aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1",
             "image" : ["/images/natas/level05.1.png", "/images/natas/level05.2.png"],
             "takeaways" : " Our hint is 'You are not logged in.' Our authentication for logged in sessions can either be maintained with cookies or tokens.  When we look at the request headers we find that they are indeed using a cookie called loggedin which is set to 0 by default.  Easy enough... Lets go ito the application tab, find that cookie and change it to true with a number 1 and then refresh the page.  Just like that we are authenticated and can see the password."
+        },
+        {
+            "level" : "06",
+            "goal" : "Username: natas6 URL: http://natas6.natas.labs.overthewire.org",
+            "answer": "7z3hEENjQtflzgnT29q7wAvMNfZdh0i9",
+            "image" : ["/images/natas/level06.1.png", "/images/natas/level06.2.png",  "/images/natas/level06.3.png"],
+            "takeaways" : " When we click the 'view source' link on this page, we are shown the php function they are using to submit the data from the form input to their server.  If we read through that we can see that what is happening is the function is requesting to include some data from a file that lives at /includes/secret.inc and using the data from that file to check if our 'secret' being submitted matched the 'secret' they have on file.  When we append the /includes/secret.inc to our url in the browser we find a file with the input they are requiring.  By pasting this string into the input field and submitting, it reveals our next password. "
+        },
+        {
+            "level" : "07",
+            "goal" : "Username: natas7 URL: http://natas7.natas.labs.overthewire.org",
+            "answer": "",
+            "image" : ["/images/natas/level07.1.png", "/images/natas/level07.2.png",  "/images/natas/level07.3.png"],
+            "takeaways" : "  "
         }
     ]
 }
