@@ -87,6 +87,22 @@
             "answer": "IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR",
             "image" : "/images/bandit/level10.png",
             "takeaways" : "For this exercise we need to take the base64 encoded text, convert it to binary and convert the binary into ASCII fromat to decode our password. We can use cat to print the encoded data on the screen.  Because we know it is encoded in base64, we can simply use the pipe operator in conjunciton with our cat opperator and use the base64 command with the switch ' -d '.  This tells it to decode the file from base64 to ASCII.  We could also do the inverse and encode ASCII to base64 by using the switch ' -e '. "
+        },
+        {
+            "level" : "11",
+            "goal" : "The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions",
+            "commands" : "grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd",
+            "answer": "5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu",
+            "image" : "/images/bandit/level11.png",
+            "takeaways" : " Rotating positions by 13 characters is caled a ROT13 encryption and is the second most simple cipher, only to Caesars Ciper.  We can encode and decode this 'encryption' simply by using the tr command in linux.  tr stands for translate.  What we want to do is translate one character into another.  If we adjust by 13 characters that means a maps to n, b to o, etc.  So we cat our file and with the pipe command we modify the output.  The first options we add after the tr command are what we are translating from.  In this case upper case A-Z and lowercase a-z and translating them into upper case N-Z&A-M and lower case n-z&a-m."
+        },
+        {
+            "level" : "12",
+            "goal" : "The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)",
+            "commands" : "grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file",
+            "answer": " 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL ",
+            "image" : "/images/bandit/level12.png",
+            "takeaways" : " This level was challenging since it forced us to manipulate the data file many different times. Because the file 'has been repeatedly compressed', we need to repeatedly uncompress it until we are able to find a correct version in an ASCII format we can interperet. We will need to use the 'file' commnad to see what the file type is, move files into a .gz format, use gunzip to uncompress them.  As we move between different formats, we will also uncompress this file into a bzip2 compressed file, which are extracted using the bzip2 -d command, as well as the tar format which are extracted using the tar xvf command.  We rinse and repeat until we get our compressed dile back into a readable ASCII format. "
         }
     ]
 }
