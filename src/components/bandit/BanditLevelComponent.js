@@ -16,7 +16,13 @@ function BanditLevelComponent(props) {
                 <p> {props.levelData.commands} </p>
                 
                 <h2 className='section-heading'> Terminal Walkthrough: </h2>
-                <img src={`${props.levelData.image}`} alt='screenshot'/>
+                {
+                    typeof(props.levelData.image) === 'string' ? <img src={`${props.levelData.image}`} alt='screenshot'/> :
+                    props.levelData.image.map( (image, i) => {
+                        return <img key={i} src={`${image}`} alt='screenshot'/>
+                    })
+                    
+                }
 
                 <h2 className='section-heading'> Answer: </h2>
                 <pre className='code-wrapper'>

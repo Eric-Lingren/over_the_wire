@@ -102,7 +102,23 @@
             "commands" : "grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file",
             "answer": " 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL ",
             "image" : "/images/bandit/level12.png",
-            "takeaways" : " This level was challenging since it forced us to manipulate the data file many different times. Because the file 'has been repeatedly compressed', we need to repeatedly uncompress it until we are able to find a correct version in an ASCII format we can interperet. We will need to use the 'file' commnad to see what the file type is, move files into a .gz format, use gunzip to uncompress them.  As we move between different formats, we will also uncompress this file into a bzip2 compressed file, which are extracted using the bzip2 -d command, as well as the tar format which are extracted using the tar xvf command.  We rinse and repeat until we get our compressed dile back into a readable ASCII format. "
+            "takeaways" : " This level was challenging since it forced us to manipulate the data file many different times. Because the file 'has been repeatedly compressed', we need to repeatedly uncompress it until we are able to find a correct version in an ASCII format we can interperet. We will need to use the 'file' commnad to see what the file type is, move files into a .gz format, use gunzip to uncompress them.  As we move between different formats, we will also uncompress this file into a bzip2 compressed file, which are extracted using the bzip2 -d command, as well as the tar format which are extracted using the tar xvf command.  We rinse and repeat until we get our compressed file back into a readable ASCII format. "
+        },
+        {
+            "level" : "13",
+            "goal" : " The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on ",
+            "commands" : " ssh, telnet, nc, openssl, s_client, nmap ",
+            "answer": " 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e ",
+            "image" : "/images/bandit/level13.png",
+            "takeaways" : " For this level we simply need to login to the Bandit 14 ssh server using a private key rather than a password.  This is already set up and configured for us, so from the bandit 13 ssh we are logged into, we can enter the command 'ssh bandit14@localhost -i sshkey.private ' which says we want to ssh login to the bandit 14 server from this local machine which we are already on, and we will use the private key in the file sshkey.private in order to autheticate our request against the public key held on the other server (bandit 14). "
+        },
+        {
+            "level" : "14",
+            "goal" : " The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost. ",
+            "commands" : " ssh, telnet, nc, openssl, s_client, nmap ",
+            "answer": " BfMYroe26WYalil77FoDi9qh59eK5xNr ",
+            "image" : ["/images/bandit/level14-1.png" , "/images/bandit/level14-2.png" ],
+            "takeaways" : "  "
         }
     ]
 }
