@@ -124,9 +124,9 @@
             "level" : "15",
             "goal" : " The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption. Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command… ",
             "commands" : " ssh, telnet, nc, openssl, s_client, nmap ",
-            "answer": "  ",
+            "answer": " cluFn7wTiGryunymYOu4RcffSxQluehd ",
             "image" : ["/images/bandit/level15-1.png" , "/images/bandit/level15-2.png" ],
-            "takeaways" : "  "
+            "takeaways" : " For us to connect to the server and send data via ssh we need to use the s_client command in conjunction with openssl.  This is done simply with the command openssl s_client -connect 127.0.0.1:30001 .  Openssl is stating we want to use ssl certificates, s_client says we are creating a secure client connection, -connect says we want to initiate a connection with the server, and 127.0.0.1:30001 is the address of the server we want to connect to.  We can see that this command creates a signed ssh certificate for our connection to use via the TLS protocal and opens a connection with our server.  We can then enter the password as we did on the previous level and the server returns to us the password for the next level. "
         }
     ]
 }
