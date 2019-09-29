@@ -118,6 +118,14 @@
             "commands" : " ssh, telnet, nc, openssl, s_client, nmap ",
             "answer": " BfMYroe26WYalil77FoDi9qh59eK5xNr ",
             "image" : ["/images/bandit/level14-1.png" , "/images/bandit/level14-2.png" ],
+            "takeaways" : " This level needs to be accomplished in 2 steps.  First we need to create a server which will listen on port 30000 and then we need to create a client which will send data to the server on port 30000. Lets start by logging into the bandit14 servers in 2 serperate tabs via terminal.  On one of them we will use netcat to start a listening server.  We do this by using the command nc (for netcat) with the option -l (for listen - this creates a server) and then 30000 (for the port we want it to listen to).  Now in the second tab, lets use this to send the pasword to our listening server.  This is also done via netcat.  Our command is nc 127.0.0.1 30000.  This says that we want to create a netcat client that will send data to localhost on port 30000 which is where we configured our server to be listening.  When we get a blank line, it is waiting for our input so we add the level 14 password and the listening server responds with our level 15 password."
+        },
+        {
+            "level" : "15",
+            "goal" : " The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption. Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command… ",
+            "commands" : " ssh, telnet, nc, openssl, s_client, nmap ",
+            "answer": "  ",
+            "image" : ["/images/bandit/level15-1.png" , "/images/bandit/level15-2.png" ],
             "takeaways" : "  "
         }
     ]
