@@ -135,6 +135,14 @@
             "answer": " xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn ",
             "image" : ["/images/bandit/level16-1.png", "/images/bandit/level16-2.png", "/images/bandit/level16-3.png", "/images/bandit/level16-4.png", "/images/bandit/level16-5.png" ],
             "takeaways" : " This level combines all the skills we have learned since level 13 and adds a new skill of port scanning.  Lets start with scanning.  Our command to scan the ports to find the one we need to connect to is nc -zv 127.0.0.1 31000-32000 .  This tells linux we want to use the netcat command to do a verbose scan of local host on port number 31000 to 32000.  Our output from this scan tells us that only one of the ports is open, so we will use port number 31790 in our next step to connect.  Lets establish an ssh connection as we did previously with the command openssl s_client -connect 127.0.0.1:31790 . After our connection is established we can paste our current level 16 password into the server.  The resulting output is a private ssh key!  We already learned how to use this in level 13 so we can do that again.  Lets navigate to our temp dir and create a file with the key we can use.  However this time when we try it we have an error telling us that our private key file is unprotecteced. We will change our permissions in linux via the command chmod 600.  When we try to connect to the ssh server again we are successful!  We can then navigate into our /etc directory for level 17 and find the actual password. "
+        },
+        {
+            "level" : "17",
+            "goal" : " There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new  NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19 ",
+            "commands" : " cat, grep, ls, diff ",
+            "answer": " kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd ",
+            "image" : ["/images/bandit/level17.png"  ],
+            "takeaways" : " We can find the line that is changed by using the diff command.  It will compare the old pawword file to the new password file and let us know what lines have changed.  This shows us the only line that was changed from the old file to the new, and we can grab that and use it to connect to the next level.  When we do this we see that the connection was successful but we are auto-logged out because of some setting configuration on the next level.  Lets move forward to that level and see how to sort that out. "
         }
     ]
 }
