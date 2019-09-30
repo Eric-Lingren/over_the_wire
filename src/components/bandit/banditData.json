@@ -143,6 +143,14 @@
             "answer": " kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd ",
             "image" : ["/images/bandit/level17.png"  ],
             "takeaways" : " We can find the line that is changed by using the diff command.  It will compare the old pawword file to the new password file and let us know what lines have changed.  This shows us the only line that was changed from the old file to the new, and we can grab that and use it to connect to the next level.  When we do this we see that the connection was successful but we are auto-logged out because of some setting configuration on the next level.  Lets move forward to that level and see how to sort that out. "
+        },
+        {
+            "level" : "18",
+            "goal" : "The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH. ",
+            "commands" : " ssh, ls, cat ",
+            "answer": " kIueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x ",
+            "image" : ["/images/bandit/level18-1.png", "/images/bandit/level18-2.png"  ],
+            "takeaways" : " In  order to pass this level we need to understand more about terminals and ssh options.  When we connect via SSH that is done through a terminal to connect to the remote host.  There are several types of terminals, two of which are pty and tty.  A tty terminal is a teletype terminal. This kind of terminal is a simple user interface device that uses text for input and output. A pty is a pseudo-teletype terminal - it's a software implementation that appears to be attached like a terminal, but instead of communicating directly with a 'real' terminal, it transfers the input and output to another program.  A PTY is actually managed by another piece of software. The bash script that is closing out our connection can be managed through the pty but not through the tty so in order to bypass it we need to establish our ssh connection via a tty rather than the default pty.  We can do this with the ssh switch command -T.  Once we are connected we can simply cat the readme file. "
         }
     ]
 }
