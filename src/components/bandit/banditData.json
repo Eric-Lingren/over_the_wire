@@ -148,9 +148,17 @@
             "level" : "18",
             "goal" : "The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH. ",
             "commands" : " ssh, ls, cat ",
-            "answer": " kIueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x ",
+            "answer": " IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x ",
             "image" : ["/images/bandit/level18-1.png", "/images/bandit/level18-2.png"  ],
             "takeaways" : " In  order to pass this level we need to understand more about terminals and ssh options.  When we connect via SSH that is done through a terminal to connect to the remote host.  There are several types of terminals, two of which are pty and tty.  A tty terminal is a teletype terminal. This kind of terminal is a simple user interface device that uses text for input and output. A pty is a pseudo-teletype terminal - it's a software implementation that appears to be attached like a terminal, but instead of communicating directly with a 'real' terminal, it transfers the input and output to another program.  A PTY is actually managed by another piece of software. The bash script that is closing out our connection can be managed through the pty but not through the tty so in order to bypass it we need to establish our ssh connection via a tty rather than the default pty.  We can do this with the ssh switch command -T.  Once we are connected we can simply cat the readme file. "
+        },
+        {
+            "level" : "19",
+            "goal" : " To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary. ",
+            "commands" : " none ",
+            "answer": " GbKksEFF4yrVs6il55v6gwY5aVje5f0j ",
+            "image" : ["/images/bandit/level19.png"  ],
+            "takeaways" : " This challenge shows us the way we can manupulate files based on user and group rights.  When we run our list command we can see that we are able to view the exe file because we are in the group bandit19, but can not run it because the owner of the file is bandit20.  When we try to run this, we are locked out.  When we try to run the file with the id appended after it we get more information about the file access rights, confirming we are not on the access list.  So what do we do...? Maybe the exe file gives us some kind of permission to read other files on the server - maybe the passwords file we know is stored in /exe/...?  Lets try it.  When we run the command ' cat /etc/bandit_pass/bandit20 ' we are denied as expected.  We can try to access it via the exe file with the command ' ./bandit20-do cat /etc/bandit_pass/bandit20 '. It worked! "
         }
     ]
 }
