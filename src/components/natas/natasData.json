@@ -52,7 +52,7 @@
         {
             "level" : "07",
             "goal" : "Username: natas7 URL: http://natas7.natas.labs.overthewire.org",
-            "answer": "",
+            "answer": "DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe",
             "image" : ["/images/natas/level07.1.png", "/images/natas/level07.2.png"],
             "takeaways" : " This level introduces us to an interesting attack called an  Directory Traversal or Path Traversal attack.  This is based on using Local File Inclusion (LFI) to trick the web server to grant us access to more files than we should be able to see. We know from the comment in the html file that we need to access etc/natas_webpass/natas8, we just need to find where that directory lives on the server.  We also know that we can use PHP's page=? query syntax to request a file through the browser url from some other directory on the server.  So Lets try to exploit this. If we take one of the page urls, ( lets use http://natas7.natas.labs.overthewire.org/index.php?page=home ) and replace the 'home' page with the path we want, ( http://natas7.natas.labs.overthewire.org/index.php?page=../etc/natas_webpass/natas8 ) we expect it to fail.  Which it does. But it doesnt refuse us, rather it just tells us we are in the wrong place for that file.  So by adding a series of ../ to our url, we eventually find the directory where our desired file lives.  Here:  http://natas7.natas.labs.overthewire.org/index.php?page=../../../../etc/natas_webpass/natas8"
         }

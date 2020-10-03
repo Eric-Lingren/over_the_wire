@@ -1,0 +1,11 @@
+{
+    "leviathanData" : [
+        {
+            "level" : "00",
+            "goal" : "Username: leviathan0 Password: leviathan0 URL: leviathan.labs.overthewire.org",
+            "answer": "rioGegei8m",
+            "image" : ["/images/leviathan/level00.png"],
+            "takeaways" : "The password for the next level was hidden in the html flie hosted in teh backup directory on the server with a comment that the developers would update and patch it later.  At first I tried copying thhis html file into my editor and launching it, but grepping for the info was far faster."
+        }
+    ]
+}

@@ -15,6 +15,9 @@ function Navbar() {
                 <li className="nav-item">
                     <NavLink className='link' to="/natas/home"> Natas </NavLink> 
                 </li>
+                <li className="nav-item">
+                    <NavLink className='link' to="/leviathan/home"> Leviathan </NavLink> 
+                </li>
             </ul>
         
         </div>
